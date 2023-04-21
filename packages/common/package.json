@@ -1,0 +1,36 @@
+{
+    "name": "@lightdash/common",
+    "version": "0.517.1",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "files": [
+        "dist/**/*"
+    ],
+    "license": "MIT",
+    "devDependencies": {
+        "@redocly/openapi-cli": "^1.0.0-beta.54",
+        "@types/pegjs": "^0.10.3",
+        "typescript-json-schema": "^0.54.0"
+    },
+    "dependencies": {
+        "@casl/ability": "^5.4.3",
+        "dependency-graph": "^0.11.0",
+        "liquidjs": "^10.0.0",
+        "moment": "^2.29.4",
+        "pegjs": "^0.10.0",
+        "uuid": "^8.3.2",
+        "cronstrue": "^2.23.0"
+    },
+    "scripts": {
+        "dev": "tsc --build --watch --preserveWatchOutput tsconfig.json",
+        "build": "tsc --build tsconfig.json",
+        "linter": "eslint -c .eslintrc.js --ignore-path ./../../.gitignore",
+        "formatter": "prettier --config .prettierrc.js --ignore-unknown --ignore-path ./../../.gitignore",
+        "lint": "yarn run linter ./src",
+        "fix-lint": "yarn run linter ./src --fix",
+        "format": "yarn run formatter ./src --check",
+        "fix-format": "yarn run formatter ./src --write",
+        "bundle-openapi": "openapi bundle --output ./src/openapibundle --ext json ./src/openapi/openapi.json --lint",
+        "test": "TZ=UTC jest"
+    }
+}

@@ -1,0 +1,17 @@
+{
+    "allOf": [
+        {
+            "$ref": "./CreateDashboardTile.json"
+        },
+        {
+            "type": "object",
+            "properties": {
+                "uuid": {
+                    "type": "string",
+                    "format": "uuid"
+                }
+            },
+            "required": ["uuid"]
+        }
+    ]
+}
